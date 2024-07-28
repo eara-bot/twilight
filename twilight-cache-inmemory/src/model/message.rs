@@ -92,7 +92,7 @@ impl PartialEq<MessageInteraction> for CachedMessageInteraction {
 /// Represents a cached [`Message`].
 ///
 /// [`Message`]: twilight_model::channel::Message
-#[derive(Clone, Debug, PartialEq, Serialize)]
+#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct CachedMessage {
     activity: Option<MessageActivity>,
     application: Option<MessageApplication>,
