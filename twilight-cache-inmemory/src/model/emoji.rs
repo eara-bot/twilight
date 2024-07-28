@@ -1,5 +1,5 @@
 use crate::CacheableEmoji;
-use serde::Serialize;
+use serde::{Serialize, Deserialize};
 use twilight_model::{
     guild::Emoji,
     id::{
