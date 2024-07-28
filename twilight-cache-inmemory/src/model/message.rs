@@ -1,6 +1,6 @@
 //! Cached message-related models.
 
-use serde::Serialize;
+use serde::{Serialize, Deserialize};
 use twilight_model::{
     application::interaction::InteractionType,
     channel::{
@@ -27,7 +27,7 @@ use twilight_model::{
 use crate::CacheableMessage;
 
 /// Information about the message interaction.
-#[derive(Clone, Debug, Eq, PartialEq, Serialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct CachedMessageInteraction {
     id: Id<InteractionMarker>,
     #[serde(rename = "type")]
