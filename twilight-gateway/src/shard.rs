@@ -831,7 +831,7 @@ impl<Q: Queue> Shard<Q> {
 impl<Q: Queue + Unpin> Stream for Shard<Q> {
     type Item = Result<Message, ReceiveMessageError>;
 
-    #[allow(clippy::too_many_lines)]
+    #[tracing::instrument(fields(id = %self.id), name = "shard", skip_all)]
     fn poll_next(mut self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Option<Self::Item>> {
         let message = loop {
             match self.state {
@@ -961,10 +961,7 @@ impl<Q: Queue + Unpin> Stream for Shard<Q> {
                 Some(Err(WebsocketError::Io(e)))
                     if e.kind() == IoErrorKind::UnexpectedEof
                         && self.config.proxy_url().is_none()
-                        && self.state.is_disconnected() =>
-                {
-                    continue
-                }
+                        && self.state.is_disconnected() => {}
                 Some(Err(_)) => {
                     self.disconnect(CloseInitiator::Transport);
                     return Poll::Ready(Some(Ok(Message::ABNORMAL_CLOSE)));
