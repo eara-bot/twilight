@@ -9,13 +9,6 @@
 - Add missing automoderation paths. ([#2356](https://github.com/twilight-rs/twilight/issues/2356))
 - Add missing @ symbol in REST path ([#2357](https://github.com/twilight-rs/twilight/issues/2357))
 
-### Bug Fixes
-
-- Resolved some warnings when building docs. ([#2331](https://github.com/twilight-rs/twilight/issues/2331))
-- clippy 1.79 lints ([#2355](https://github.com/twilight-rs/twilight/issues/2355))
-- Add missing automoderation paths. ([#2356](https://github.com/twilight-rs/twilight/issues/2356))
-- Add missing @ symbol in REST path ([#2357](https://github.com/twilight-rs/twilight/issues/2357))
-
 ### Build
 
 - Remove dependency on futures-util ([#2309](https://github.com/twilight-rs/twilight/issues/2309))
