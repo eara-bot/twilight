@@ -8,6 +8,12 @@
 - Implement user applications ([#2323](https://github.com/twilight-rs/twilight/issues/2323))
 - add contexts and integration types to command builder ([#2386](https://github.com/twilight-rs/twilight/issues/2386))
 
+### Features
+
+- Implement Premium Button Style ([#2363](https://github.com/twilight-rs/twilight/issues/2363))
+- Implement user applications ([#2323](https://github.com/twilight-rs/twilight/issues/2323))
+- add contexts and integration types to command builder ([#2386](https://github.com/twilight-rs/twilight/issues/2386))
+
 ### Refactor
 
 - Remove redundant imports ([#2316](https://github.com/twilight-rs/twilight/issues/2316))

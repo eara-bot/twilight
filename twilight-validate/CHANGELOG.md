@@ -6,6 +6,10 @@
 
 - Misleading error message validating commands. ([#2329](https://github.com/twilight-rs/twilight/issues/2329))
 
+### Bug Fixes
+
+- Misleading error message validating commands. ([#2329](https://github.com/twilight-rs/twilight/issues/2329))
+
 ### Features
 
 - Implement additional select menu types ([#2219](https://github.com/twilight-rs/twilight/issues/2219))
