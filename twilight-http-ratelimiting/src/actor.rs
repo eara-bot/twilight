@@ -291,11 +291,13 @@ pub async fn runner(
                 pop!(queue);
             }
             Some((msg, predicate)) = rx.recv() => {
-                let (_, queue) = if let Some(bucket) = buckets.get(&msg.path) {
-                    let hash = hasher.hash_bucket(bucket, &msg.path);
-                    queues.find_mut(hash, |a| a.0 == hash).unwrap()
-                } else {
-                    let hash = hasher.hash(&msg.path);
+                let (_, queue) = {
+                    let hash = if let Some(bucket) = buckets.get(&msg.path) {
+                        hasher.hash_bucket(bucket, &msg.path)
+                    } else {
+                        hasher.hash(&msg.path)
+                    };
+
                     queues.entry(hash, |a| a.0 == hash, |a| a.0).or_insert((hash, Queue::default())).into_mut()
                 };
 
